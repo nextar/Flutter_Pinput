@@ -89,11 +89,11 @@ class PinPutViewState extends State<PinPutView> {
         children: [
           GestureDetector(
             onLongPress: () {
-              print(_formKey.currentState.validate());
+              print(_formKey.currentState!.validate());
             },
             child: PinPut(
               validator: (s) {
-                if (s.contains('1')) return null;
+                if (s!.contains('1')) return null;
                 return 'NOT VALID';
               },
               useNativeKeyboard: false,
@@ -308,8 +308,8 @@ class PinPutViewState extends State<PinPutView> {
 }
 
 class RoundedButton extends StatelessWidget {
-  final String title;
-  final VoidCallback onTap;
+  final String? title;
+  final VoidCallback? onTap;
 
   RoundedButton({this.title, this.onTap});
 
